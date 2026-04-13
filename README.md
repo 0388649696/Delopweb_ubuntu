@@ -15,7 +15,11 @@ Dùng VMwave > Tạo máy ảo mới > Chọn file Iso. Cấu hình ổn định
 Đến đây ta đặt thông tin login, nameserver, password
 <img width="1075" height="252" alt="Screenshot 2026-04-13 191941" src="https://github.com/user-attachments/assets/77f538bc-7505-4cca-a202-8f1e654d5d7e" />
 Di chuyển tới đây, Space chọn để cài Install OpenSSH server
-<img width="622" height="217" alt="Screenshot 2026-04-13 192126" src="https://github.com/user-attachments/assets/68178562-f251-4bba-a132-6ac86803055f" />
+<img width="622" height="217" alt="Screenshot 2026-04-13 192126" src="https://github.com/user-attachments/assets/68178562-f251-4bba-a132-6ac86803055f" /> .
+Sau khi cài đặt xong, đăng nhập vào Ubuntu với thông tin đăng nhập trước đó để chuyển sang bước tiếp theo
+
+#### B2 – Cài SSH
+
 
 
 
