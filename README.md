@@ -21,13 +21,24 @@ Sau khi cài đặt xong, đăng nhập vào Ubuntu với thông tin đăng nh�
 #### B2 – Cài SSH
 Lệnh: sudo apt update : update hdh
       sudo apt install openssh-server -y  : Cài SSH.
-      <img width="686" height="131" alt="image" src="https://github.com/user-attachments/assets/034f473c-62e0-4b2d-a39b-63cdf3af32e9" /> </img>
+      <img width="686" height="131" alt="image" src="https://github.com/user-attachments/assets/034f473c-62e0-4b2d-a39b-63cdf3af32e9" /> 
+      
       ip a : lấy IP máy ta có 192.168.243.131
       <img width="826" height="230" alt="image" src="https://github.com/user-attachments/assets/3b931daf-9513-43a0-ae98-9767db5d5291" />
       ssh anhtu@192.168.243.131  : Tại máy kết nối (Windows) join nó vào Ubuntu
 #### B3 – Cài Docker
-Lệnh: sudo apt install docker.io -y
-      
+Lệnh cài: sudo apt install docker.io -y
+      sudo usermod -aG docker $USER  : để tiện không cần phải sudo khi dùng Docker
+      exit để reboot áp dụng thay đổi
+      sudo apt install docker-compose -y  : Cài docker compose
+  sudo ufw allow 80 / 1880 / 9630 - Mở các cổng cần thiết
+  sudo ufw enable
+<img width="565" height="214" alt="image" src="https://github.com/user-attachments/assets/00f8bee9-d688-408b-8de5-8470da969d8d" />
+
+### 3.C – Tạo thư mục project
+- Tạo /my-app : mkdir -p ~/myapp
+- join nó: cd ~/myapp
+- Tạo nginx, myweb, nodered.
 
 
 
