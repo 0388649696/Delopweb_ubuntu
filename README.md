@@ -67,5 +67,39 @@ bấm Create a tunnel
 chọn Cloudflared, Đặt tên myapp-tunnel
 <img width="882" height="564" alt="image" src="https://github.com/user-attachments/assets/61902c82-f83b-45da-8292-dd8d6dc62060" />
  Chọn subdomain: anhtu.divu.click
- 
+ Cấu hình URL: http://nginx:80
+Chú ý: + kiểm tra container cùng network
+docker inspect nginx | grep Network
+docker inspect cloudflared | grep Network
+- Giai thích: Trường hợp e rằng cloudflared chạy trong docker nên sử dụng nginx:80
 
+👉 phải thấy cùng network
+
+Kết quả:
+<img width="1606" height="724" alt="image" src="https://github.com/user-attachments/assets/076368df-429e-4925-b6ca-de94a1095982" />
+
+
+#### Đúc kết
+1. Tại sao dùng Nginx làm Reverse Proxy?
+Nginx đóng vai trò gateway, giúp gom toàn bộ traffic vào một điểm duy nhất rồi phân phối (web, API), tăng bảo mật và tránh phải expose trực tiếp Node-RED ra Internet. Để tránh bị quét dò cổng thì không mở port ra ngoài Internet, mà dùng Cloudflare Tunnel: server chỉ tạo kết nối outbound, nên bên ngoài không scan thấy port nào cả.
+
+2. Mount file vs mount thư mục trong Docker
+Mount file dùng cho cấu hình cụ thể (ví dụ nginx.conf), còn mount thư mục dùng cho dữ liệu hoặc source code; thư mục linh hoạt hơn vì chứa nhiều file.
+
+3. Sửa index.html có cập nhật ngay không?
+Có . Vì container đọc trực tiếp file từ host thông qua mount, nên thay đổi trên Ubuntu sẽ phản ánh ngay mà không cần rebuild.
+
+4. restart: always / unless-stopped dùng để làm gì?
+Giúp container tự khởi động lại khi bị crash hoặc khi hệ thống reboot, đảm bảo dịch vụ luôn chạy ổn định. Ban đầu vì chính không có dòng này nên dịch vụ không tự khởi động khi lỗi văng
+
+5. Dùng chung network + lợi ích
+Khai báo chung network trong docker-compose.yml giúp các container giao tiếp bằng tên (ví dụ nodered:1880) thay vì IP, dễ quản lý và mở rộng hệ thống.
+
+6. Đưa Cloudflare Token vào .env + .gitignore
+Token là thông tin nhạy cảm, nên lưu trong .env và không commit lên GitHub để tránh bị lộ và bị người khác chiếm quyền tunnel.
+
+7. Tại sao dùng :ro khi mount Nginx config
+:ro (read-only) giúp container chỉ đọc file cấu hình, không thể sửa từ bên trong, tránh lỗi hoặc bị ghi đè ngoài ý muốn.
+
+8. Dùng Cloudflare Tunnel có cần mở port không?
+Không, vì tunnel tạo kết nối outbound tới Cloudflare, từ đó người dùng truy cập vào mà không phải mở cổng trực tiếp trên server, tăng bảo mật
