@@ -23,7 +23,7 @@ Lệnh: sudo apt update : update hdh
       sudo apt install openssh-server -y  : Cài SSH.
       <img width="686" height="131" alt="image" src="https://github.com/user-attachments/assets/034f473c-62e0-4b2d-a39b-63cdf3af32e9" /> 
       
-      ip a : lấy IP máy ta có 192.168.243.131
+      ip a : lấy IP máy ta có 192.168.243.131 => ssh anhtu@192.168.243.131
       <img width="826" height="230" alt="image" src="https://github.com/user-attachments/assets/3b931daf-9513-43a0-ae98-9767db5d5291" />
       ssh anhtu@192.168.243.131  : Tại máy kết nối (Windows) join nó vào Ubuntu
 #### B3 – Cài Docker
@@ -32,14 +32,25 @@ Lệnh cài: sudo apt install docker.io -y
       exit để reboot áp dụng thay đổi
       sudo apt install docker-compose -y  : Cài docker compose
   sudo ufw allow 80 / 1880 / 9630 - Mở các cổng cần thiết
-  sudo ufw enable
+  sudo ufw disable -> tắt để login dễ hơn
 <img width="565" height="214" alt="image" src="https://github.com/user-attachments/assets/00f8bee9-d688-408b-8de5-8470da969d8d" />
 
 ### 3.C – Tạo thư mục project
 - Tạo /my-app : mkdir -p ~/myapp
 - join nó: cd ~/myapp
 - Tạo nginx, myweb, nodered.
-
+myapp/
+ ├── docker-compose.yml
+ ├── nginx/
+ │    └── nginx.conf
+ ├── myweb/
+ │    └── index.html
+ └── nodered/.
+Tạo: nano docker-compose.yml. 
+Chạy lại containner: docker-compose up -d
+Check: docker-compose ps
+<img width="976" height="100" alt="image" src="https://github.com/user-attachments/assets/1d62df5e-75ef-4c02-ad3d-1953fc4462e4" />
+<img width="917" height="262" alt="image" src="https://github.com/user-attachments/assets/f94a2522-cc8a-4f49-854d-3a3c4c5b3e2f" />
 
 
 
