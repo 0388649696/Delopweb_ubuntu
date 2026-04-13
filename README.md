@@ -46,12 +46,26 @@ myapp/
  ├── myweb/
  │    └── index.html
  └── nodered/.
-Tạo: nano docker-compose.yml. 
+Tạo: nano docker-compose.yml.
+
+
+### E- Triển khai test
 Chạy lại containner: docker-compose up -d
 Check: docker-compose ps
 <img width="976" height="100" alt="image" src="https://github.com/user-attachments/assets/1d62df5e-75ef-4c02-ad3d-1953fc4462e4" />
 <img width="917" height="262" alt="image" src="https://github.com/user-attachments/assets/f94a2522-cc8a-4f49-854d-3a3c4c5b3e2f" />
 
+Chỉnh file index.html:
+<img width="735" height="312" alt="image" src="https://github.com/user-attachments/assets/2e56cfeb-6a16-4695-bac6-f16c56696816" />
+Ví dụ gọi api 
+<img width="970" height="379" alt="image" src="https://github.com/user-attachments/assets/dcc6d3a6-6ff0-4ba4-b501-2651cd40b9a9" />
 
-
+### G - Triển khai ứng dụng đến End-user
+Vào Zero Trust
+vào Networks → Tunnels
+bấm Create a tunnel
+chọn Cloudflared, Đặt tên myapp-tunnel
+<img width="882" height="564" alt="image" src="https://github.com/user-attachments/assets/61902c82-f83b-45da-8292-dd8d6dc62060" />
+ Chọn subdomain: anhtu.divu.click
+ 
 
