@@ -15,14 +15,20 @@ Dùng VMwave > Tạo máy ảo mới > Chọn file Iso. Cấu hình ổn định
 Đến đây ta đặt thông tin login, nameserver, password
 <img width="1075" height="252" alt="Screenshot 2026-04-13 191941" src="https://github.com/user-attachments/assets/77f538bc-7505-4cca-a202-8f1e654d5d7e" />
 Di chuyển tới đây, Space chọn để cài Install OpenSSH server
-<img width="622" height="217" alt="Screenshot 2026-04-13 192126" src="https://github.com/user-attachments/assets/68178562-f251-4bba-a132-6ac86803055f" /> .
-Sau khi cài đặt xong, đăng nhập vào Ubuntu với thông tin đăng nhập trước đó để chuyển sang bước tiếp theo
+<img width="622" height="217" alt="Screenshot 2026-04-13 192126" src="https://github.com/user-attachments/assets/68178562-f251-4bba-a132-6ac86803055f" /> 
 
+Sau khi cài đặt xong, đăng nhập vào Ubuntu với thông tin đăng nhập trước đó để chuyển sang bước tiếp theo
 #### B2 – Cài SSH
 Lệnh: sudo apt update : update hdh
       sudo apt install openssh-server -y  : Cài SSH.
       <img width="686" height="131" alt="image" src="https://github.com/user-attachments/assets/034f473c-62e0-4b2d-a39b-63cdf3af32e9" /> </img>
+      ip a : lấy IP máy ta có 192.168.243.131
+      <img width="826" height="230" alt="image" src="https://github.com/user-attachments/assets/3b931daf-9513-43a0-ae98-9767db5d5291" />
+      ssh anhtu@192.168.243.131  : Tại máy kết nối (Windows) join nó vào Ubuntu
+#### B3 – Cài Docker
+Lệnh: sudo apt install docker.io -y
       
+
 
 
 
