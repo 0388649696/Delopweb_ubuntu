@@ -1,4 +1,4 @@
-<img width="379" height="242" alt="Screenshot 2026-04-11 182028" src="https://github.com/user-attachments/assets/e40ab573-3182-4718-a5dc-e368f08ce828" /># Delopweb_ubuntu
+# Delopweb_ubuntu
 ### 1. Cấu hình Domain với Cloudflare
 Trước tiên, e sử dụng một tên miền để thực hành tên "divu.click"
 <img width="1890" height="894" alt="Screenshot 2026-04-11 175740" src="https://github.com/user-attachments/assets/68005d80-7b8b-4238-89f8-c4a3a7227dda" />
