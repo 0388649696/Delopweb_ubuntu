@@ -19,6 +19,10 @@ Di chuyển tới đây, Space chọn để cài Install OpenSSH server
 Sau khi cài đặt xong, đăng nhập vào Ubuntu với thông tin đăng nhập trước đó để chuyển sang bước tiếp theo
 
 #### B2 – Cài SSH
+Lệnh: sudo apt update : update hdh
+      sudo apt install openssh-server -y  : Cài SSH.
+      <img width="686" height="131" alt="image" src="https://github.com/user-attachments/assets/034f473c-62e0-4b2d-a39b-63cdf3af32e9" /> </img>
+      
 
 
 
