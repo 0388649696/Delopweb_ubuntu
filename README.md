@@ -68,12 +68,10 @@ chọn Cloudflared, Đặt tên myapp-tunnel
 <img width="882" height="564" alt="image" src="https://github.com/user-attachments/assets/61902c82-f83b-45da-8292-dd8d6dc62060" />
  Chọn subdomain: anhtu.divu.click
  Cấu hình URL: http://nginx:80
-Chú ý: + kiểm tra container cùng network
+Chú ý: + kiểm tra container cùng network. Ta phải thấy cùng network
 docker inspect nginx | grep Network
 docker inspect cloudflared | grep Network
 - Giai thích: Trường hợp e rằng cloudflared chạy trong docker nên sử dụng nginx:80
-
-👉 phải thấy cùng network
 
 Kết quả:
 <img width="1606" height="724" alt="image" src="https://github.com/user-attachments/assets/076368df-429e-4925-b6ca-de94a1095982" />
